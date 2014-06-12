@@ -176,3 +176,12 @@ $.fn.litbMenuShow = function (options) {
         });
     }
 };
+
+function show()
+{
+    if(document.getElementById("keyword").value=="Enter search keywords here")
+    {alert('please input the keyword!');}
+    else{document.getElementById("quick_find_header").submit();}
+
+    return false;
+}
