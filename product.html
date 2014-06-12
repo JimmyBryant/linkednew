@@ -2466,6 +2466,10 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
     </div>
     <!-- end all category -->
 
+
+    <div style="display: none" id="pop_window">
+    </div>
+
     <!-- main content -->
     <div id="wrapper" class="widget">
 
@@ -2494,87 +2498,43 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
                 <div class="for_gray_bg">
                     <!-- product image zooming box -->
                     <div id="product-zooming-box">
-                        <ul id="image-zooming">
-                        <li>
-                        <!-- This is the large (zoomed) image source: -->
-                        <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20140320060333.jpg" title="" />
-                        <!-- This is the thumb image source (if not provided, it will use the large image source and resize it): -->
-                        <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20140320060333.jpg" />
-                        </li>
-                        <li>
-                        <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20142508122537-126000061.jpg" title="" />
-                        <!-- This is the thumb image source (if not provided, it will use the large image source and resize it): -->
-                        <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20142508122537-126000061.jpg" />
-                        </li>
-                        <li>
-                        <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20142508122557-126000061.jpg" title="" />
-                        <!-- This is the thumb image source (if not provided, it will use the large image source and resize it): -->
-                        <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20142508122557-126000061.jpg" />
-                        </li>
-                        <li>
-                        <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143108123137-126000061.jpg" title="" />
-                        <!-- This is the thumb image source (if not provided, it will use the large image source and resize it): -->
-                        <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143108123137-126000061.jpg" />
-                        </li>
-                       <li>
-                        <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143208123236-126000061.jpg" title="" />
-                        <!-- This is the thumb image source (if not provided, it will use the large image source and resize it): -->
-                        <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143208123236-126000061.jpg" />
-                        </li>
-                       <li>
-                        <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143208123256-126000061.jpg" title="" />
-                        <!-- This is the thumb image source (if not provided, it will use the large image source and resize it): -->
-                        <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143208123256-126000061.jpg" />
-                        </li>
-                        <li>
-                        <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20144508124510-126000061.jpg" title="" />
-                        <!-- This is the thumb image source (if not provided, it will use the large image source and resize it): -->
-                        <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20144508124510-126000061.jpg" />
-                        </li>
-
-                        </ul>
-                    </div>
-                    <!-- BOF Product Flash-->
-                    <!--
-                    <div style="width: 335px" id="product_flash" class="fl margin_t g_t_c">
-                        <ul>
+                        <ul class="clearfix" id="image-zooming">
                             <li>
-                                <div class="relative">
-                                    <a style="margin: 0px auto; width: 280px" id="product_flash_show"
-                                        class="block lbgs" href="http://www.linkednew.com/images/v/20140320060333.jpg" target="_blank">
-                                        <img class="lbg block relative" border="0" src="http://www.linkednew.com/images/l/20140320060333.jpg" width="280"></a>
-                                </div>
+                            <!-- This is the large (zoomed) image source: -->
+                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20140320060333.jpg" title="" />
+                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20140320060333.jpg" />
+                            </li>
+                            <li>
+                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20142508122537-126000061.jpg" title="" />
+                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20142508122537-126000061.jpg" />
+                            </li>
+                            <li>
+                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20142508122557-126000061.jpg" title="" />
+                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20142508122557-126000061.jpg" />
+                            </li>
+                            <li>
+                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143108123137-126000061.jpg" title="" />
+                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143108123137-126000061.jpg" />
+                            </li>
+                           <li>
+                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143208123236-126000061.jpg" title="" />
+                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143208123236-126000061.jpg" />
+                            </li>
+                           <li>
+                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143208123256-126000061.jpg" title="" />
+                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143208123256-126000061.jpg" />
+                            </li>
+                            <li>
+                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20144508124510-126000061.jpg" title="" />
+                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20144508124510-126000061.jpg" />
                             </li>
                         </ul>
-                        <ul>
-                            <span class="p_f_en"><a id="product_flash_show_a" onclick="return popupwin(this.href,'popup_larger_image',500,560,'resizable=0,scrollbars=0,toolbar=0,status=0');"
-                                href="http://www.linkednew.com/images/v/20140320060333.jpg">&nbsp; &nbsp;View Larger Image</a><br>
-                                <a style="color: #1e4e8e; font-size: 11px; text-decoration: underline" href="HV-800-Wireless-Bluetooth-Sports-Headset-Stereo-Music-Headset-Universal-Neckband-for-cellphones-blue-126000061.html#b">
-                                    Share your images with others </a></span>
-                        </ul>
-                        <ul id="product_flash_btn2">
-                            <li class="product_list_li">
-                                <div class="product_list_li_l" title="Back" next="l">
-                                </div>
-                                <div class="product_list_li_c">
-                                    <ul class="product_list_li_ul">
-                                        <li><img class="li_img01" title="retail 20142408122446-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20142408122446-126000061.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20142408122446-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20142508122537-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20142508122537-126000061.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20142508122537-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20142508122557-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20142508122557-126000061.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20142508122557-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20143108123137-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20143108123137-126000061.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20143108123137-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20143208123236-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20143208123236-126000061.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20143208123236-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20143208123256-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20143208123256-126000061.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20143208123256-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20143308123316-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20143308123316-126000061.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20143308123316-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20144508124510-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20144508124510-126000061.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20144508124510-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20140320060333.jpg" border="0" src="http://www.linkednew.com/images/s/20140320060333.jpg" width="42" height="42" big="http://www.linkednew.com/images/l/20140320060333.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li>
-                                    </ul>
-                                </div>
-                                <div class="product_list_li_r" title="next" next="r">
-                                </div>
-                                <li><span class="g_t_c">Displaying <span class="product_list_text"></span></span>
-                            </li>
-                        </ul>
-
-                        <script type="text/javascript">
-        var obj1=new ls("product_flash_show","product_flash_btn2");
-        obj1.init();
-                        </script>
-
+                        <div class="share-product-image">
+                            <a class="btn btn-info" href="#b">
+                                    Share your images with others
+                            </a>
+                        </div>
                     </div>
-                     -->
-                    <!-- EOF Product Flash-->
                     <!-- BOF Product Tools-->
                     <div id="product_info_con" class="fr black">
                         <form enctype="multipart/form-data" onsubmit="return check_product(this);" method="post"
@@ -2720,7 +2680,7 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
                                             &nbsp;
                                         </div>
                                     </div>
-                                    <div style=" width: 395px; margin-right: 0px" class="use_round center" id="expressCheckout">
+                                    <div class="use_round center" id="expressCheckout">
                                         <em><b></b></em>
                                         <div class="use_round_con big">
                                             <h3>
@@ -2750,7 +2710,7 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
                             </ul>
                             <ul>
                                 <ul class="margin_t">
-                                    <div style="width: 395px; margin-right: 0px" class="use_round center">
+                                    <div class="use_round center">
                                         <em><b></b></em>
                                         <div class="use_round_con big">
                                             It usually takes <strong class="big2 red">only less than 24 hours </strong>to ship
@@ -2782,7 +2742,7 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
                                     value="1" maxlength="6" name="cart_quantity">
                                 <strong>Unit(s)</strong>
                                 <li style="margin-top: 3px"><a title="Is In Stock" onclick="floatBox(this,'isinstock');"
-                                    href="HV-800-Wireless-Bluetooth-Sports-Headset-Stereo-Music-Headset-Universal-Neckband-for-cellphones-blue-126000061.html#show">
+                                    href="javascript:;">
                                     <img class="relative" border="0" src="http://www.linkednew.com/images/in_stock_button.gif">
                                 </a></li>
                             </ul>
@@ -2965,11 +2925,11 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
                             </div>
                             <ul class="g_t_c">
                                 <li style="margin-top: 3px"><a title="Shipping Methods" onclick="floatBox(this,'shipping_info');"
-                                    href="HV-800-Wireless-Bluetooth-Sports-Headset-Stereo-Music-Headset-Universal-Neckband-for-cellphones-blue-126000061.html#show">
+                                    href="javascript:;">
                                     <img class="relative" border="0" src="http://www.linkednew.com/images/shipping.gif">
                                 </a>
                                 <li style="margin-top: 3px"><a title="Payment methods" onclick="floatBox(this,'payment_option');"
-                                    href="HV-800-Wireless-Bluetooth-Sports-Headset-Stereo-Music-Headset-Universal-Neckband-for-cellphones-blue-126000061.html#show">
+                                    href="javascript:;">
                                     <img class="relative" border="0" src="http://www.linkednew.com/images/payment.gif">
                                 </a>
                                 <li style="margin-top: 3px">

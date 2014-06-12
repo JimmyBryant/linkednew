@@ -1142,13 +1142,20 @@ A.more_product:visited {
 	WIDTH: 115px; BACKGROUND: url(../images/seal_m_en.gif) no-repeat; HEIGHT: 82px
 }
 .png {
-	PADDING-BOTTOM: 22px; PADDING-LEFT: 22px; WIDTH: 273px; PADDING-RIGHT: 44px; BACKGROUND: url(../images/pop_win_bg.png) no-repeat; HEIGHT: 284px; PADDING-TOP: 22px
+	PADDING-BOTTOM: 22px;
+PADDING-LEFT: 22px;
+WIDTH: 273px;
+PADDING-RIGHT: 44px;
+BACKGROUND: url(../images/pop_win_bg.png) no-repeat;
+HEIGHT: 284px;
+PADDING-TOP: 20px;
+line-height: 14px;
 }
 .pad_product {
-	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; WIDTH: 397px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/bg.gif) repeat-x; PADDING-TOP: 10px
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; WIDTH: 440px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/bg.gif) repeat-x; PADDING-TOP: 10px
 }
 #product_info_con {
-	WIDTH: 610px
+	WIDTH: 660px
 }
 #product_info_con_clothes {
 	WIDTH: 565px
@@ -2040,8 +2047,16 @@ A.button_f {
 }
 #product-zooming-box{
 	float: left;
-	width: 350px;
+	width: 300px;
 	padding: 10px 15px;
+}
+.share-product-image{
+	text-align: center;
+	padding: 10px 0;
+	margin-top: 380px;
+}
+.share-product-image .btn{
+	color: #FFF;
 }
  .clearfix:before,
  .clearfix:after {

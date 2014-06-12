@@ -16,7 +16,11 @@
 	display: none;
 	margin-bottom: 50px;
 }
-
+#etalage .etalage_icon,#image-zooming .etalage_icon{
+	background: url(../images/zoom_in.png) no-repeat;
+	width: 24px;
+	height: 24px;
+}
 /* Large thumbnail: */
 #etalage .etalage_thumb,#image-zooming .etalage_thumb{
 	background: white url(../images/zoom_loading.gif) center no-repeat;
