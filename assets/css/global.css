@@ -413,7 +413,7 @@ DEL {
 	BACKGROUND-POSITION: 0px -3125px
 }
 .bg_box_gray {
-	BACKGROUND: url(../images/bg_box_gray.gif) repeat-x
+	/*BACKGROUND: url(../images/bg_box_gray.gif) repeat-x*/
 }
 .bg_help {
 	PADDING-LEFT: 15px; BACKGROUND: url(../images/icon_help_list.gif) no-repeat 0px 50%
@@ -422,7 +422,9 @@ DEL {
 	PADDING-BOTTOM: 3px; LINE-HEIGHT: 140%; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/red_arrow_bg.gif) no-repeat left 7px; PADDING-TOP: 3px
 }
 .gray_trangle_list LI {
-	PADDING-BOTTOM: 3px; LINE-HEIGHT: 140%; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/list_ca_l.gif) no-repeat left 9px; PADDING-TOP: 3px
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 140%; PADDING-LEFT: 10px; PADDING-RIGHT: 10px;
+	BACKGROUND: url(../images/list_ca_l.gif) no-repeat left 9px;
+	PADDING-TOP: 3px
 }
 .dl_dot DT {
 	PADDING-LEFT: 10px; BACKGROUND: url(../images/icon_arr.gif) no-repeat 2px center
@@ -667,7 +669,6 @@ BUTTON:active {
 	MARGIN: 3px 0px
 }
 .bg_letter {
-	BACKGROUND: url(../images/bg_letter_1.gif) no-repeat right top; PADDING-TOP: 20px
 }
 #nav_menu {
 	TEXT-ALIGN: center; FONT-SIZE: 13px; FONT-WEIGHT: bold
@@ -768,7 +769,7 @@ A.icon_inquiry {
 	PADDING-BOTTOM: 4px; LINE-HEIGHT: 22px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FLOAT: left; COLOR: #fff; FONT-SIZE: 13px; FONT-WEIGHT: bold; PADDING-TOP: 4px
 }
 .right_big_con {
-	WIDTH: 755px; FLOAT: right; OVERFLOW: hidden
+	WIDTH: 788px; FLOAT: right; OVERFLOW: hidden
 }
 .r_b_c {
 	WIDTH: 753px
@@ -1027,7 +1028,7 @@ A.more_product:visited {
 	TEXT-INDENT: 2em; WIDTH: 50%; FLOAT: left
 }
 #search_feedback {
-	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; WIDTH: 240px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/search_cate.gif) repeat-x left bottom; HEIGHT: 131px; PADDING-TOP: 0px
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; WIDTH: 240px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/search_cate.gif) repeat-x left bottom; HEIGHT: 166px; PADDING-TOP: 0px
 }
 .right_small_con {
 	HEIGHT: 207px; OVERFLOW: hidden
@@ -1231,6 +1232,12 @@ line-height: 14px;
 	border-bottom: 1px solid #ddd;
 	margin:0;
 }
+#bodyblock .small-block-title{
+	padding: 5px;
+	border-bottom: 2px solid #be0000;
+	line-height: 20px;
+	font-size: 12px;
+}
 #product_main_con #search_feedback {
 	width: 230px;
 	height: 166px;
@@ -1392,7 +1399,7 @@ line-height: 14px;
 	TEXT-ALIGN: left; TEXT-INDENT: 8px; WIDTH: 185px; BACKGROUND-POSITION: -545px 0px
 }
 .check_box_tit {
-	BORDER-BOTTOM: #be0000 2px solid; LINE-HEIGHT: 32px; BACKGROUND: url(../images/bg_title.gif) repeat-x; HEIGHT: 32px; FONT-SIZE: 12px; FONT-WEIGHT: bold
+	BORDER-BOTTOM: #be0000 2px solid; LINE-HEIGHT: 32px;  HEIGHT: 32px; FONT-SIZE: 12px; FONT-WEIGHT: bold
 }
 .check_box_con LI {
 	FLOAT: left

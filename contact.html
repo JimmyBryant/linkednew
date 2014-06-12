@@ -1,167 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/"
-xmlns:fb="http://www.facebook.com/2008/fbml" dir="ltr" lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>LinkedNew</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/global.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
-    <link rel="shortcut icon" href="http://www.linkednew.com/favicon.ico">
-    <link rel="icon" type="image/gif" href="http://www.linkednew.com/animated_favicon1.gif">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/style_en_default.css">
-    </link>
-    <link rel="stylesheet" type="text/css" href="assets/css/style_en_index.css">
-    </link>
-    <link rel="stylesheet" type="text/css" href="assets/css/litb-cate-menu.css">
-    </link>
-    <link rel="stylesheet" type="text/css" href="assets/css/skin.css">
-    </link>
+    <title>
+	   Customer Service - LinkedNew.com
+    </title>
+    <meta name="ROBOTS" content="ALL" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="keywords" content="iphone apple, samsung note, S3 accessories, phone cases, laptop charger, laptop battery, cellphone battery, keyboard" />
+    <meta name="description" content="Retail and Wholesale Electronic Accessories such as Iphone and Samsung phone accessories at LinkedNew.com" />
+    <meta content="no" http-equiv="imagetoolbar" />
+    <meta name="author" content="LinkedNew.com Team and others" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style_en_default.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style_en_index.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/litb-cate-menu.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/skin.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.font.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/etalage.css">
+    <link rel="shortcut icon" href="http://www.linkednew.com/favicon.ico" />
+    <meta name="GENERATOR" content="MSHTML 8.00.6001.18372" />
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script language="JavaScript" src="assets/js/en.js" type="text/JavaScript">
-    </script>
-    <script type="text/javascript" src="assets/js/prototype.js"></script>
-    <script type="text/javascript" src="assets/js/score.js"></script>
-    <script type="text/javascript" src="assets/js/frmCheck.js"></script>
-
+    <script type="text/javascript" src="assets/js/en.js"></script>
     <script type="text/javascript" src="assets/js/linked_menu_data.js">
     </script>
-    <script>
 
-var extraPrice = 0;
-var FRIENDLY_URLS='true';
-var symbolLeft='US$';
-var min_quantity=1;
-var discount = new Array();
-discount[0] =["1","22.49","1","0.00"];
-var originPrice = discount[0][1];
-function stripPrice(s) {
-    s = s.replace(/[\D]+\s/,"").replace(")","");;
-    return s;
-}
-
-function str2Number(s){
-    var str = s.replace(/[,]*/g, "");
-    return str;
-}
-function number2Str(tempNum){
-    var iniNum;
-    var floatNum;
-    tempNum = tempNum.toString();
-    var decimalPosition = tempNum.indexOf(".");
-    if(decimalPosition>0) {
-        iniNum = tempNum.slice(0,decimalPosition)
-        floatNum = tempNum.slice(decimalPosition)
-    }else{
-        iniNum = tempNum;
-        floatNum = "";
-    }
-
-    var l = iniNum.length;
-    var times = Math.ceil(l/3);
-    for(i=1;i<times;i++) {
-        iniNum = iniNum.slice(0,l-3*i) + ',' + iniNum.slice(l-3*i);
-    }
-    return(iniNum + floatNum);
-}
-
-function countPrice() {
-    return Number(str2Number(originPrice)) + Number(extraPrice);
-}
-
-function changePrice() {
-    if(!$p('cart_quantity')) return;
-    var qty = $p('cart_quantity').value;
-    var tmp ;
-    var priceTmp;
-    for(var i=discount.length-1;i>=0;i--){
-        if(qty >= parseInt(discount[i][0])){
-            if(parseInt(discount[i][2]) > 0){
-                $p('shipping_rule').innerHTML = ("+ <span class=\"red\">Free Shipping</span>");//$p('shipping_rule').innerHTML = ("+ " + discount[i][3] + " Free Shipping ");
-            }
-            else{
-                $p('shipping_rule').innerHTML = ("+ Shipping Cost");
-            }
-            originPrice = discount[i][1];
-            break;
-        }
-    }
-
-
-    var x=document.forms['cart_quantity_frm'].elements;
-    $p('products_price_unit1').innerHTML = number2Str(countPrice().toFixed(2));
-    $p('products_price_unit').innerHTML = number2Str(countPrice().toFixed(2));
-    $p('products_price_all').innerHTML = symbolLeft + "&nbsp;" + number2Str((countPrice()*$p('cart_quantity').value).toFixed(2));
-    var ll=$p("attrib-9")[$p("attrib-9").selectedIndex].innerHTML;
-    var sps="";
-    for(i=0;i<6;i++)
-    {
-     if($p("attrib-"+i)!=null)
-     sps+=" "+$p("attrib-"+i)[$p("attrib-"+i).selectedIndex].innerHTML;
-
-
-    }
-    sps=sps.replace("$","USD");
-
-    $p('xcheckout').innerHTML = "<a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&custom=linkednew&business=info%40linkednew%2ecom&item_name=HV 800 Wireless Bluetooth Sports Headset Stereo Music Headset Universal Neckband for cellphones blue " + sps + " " + ll.replace("$", "USD") + "&item_number=126000061&amount=" + number2Str(countPrice().toFixed(2)) + "&no_shipping=0&no_note=1&tax=0%2e00&weight=1&weight_unit=lbs&currency_code=USD&lc=US&bn=PP%2dBuyNowBF&charset=UTF%2d8\"><img src=\"assets/images/xcheckout.gif\"/></a>";
-}
-
-function check_product(frm){
-    if($p('cart_quantity').value < min_quantity){
-        alert('The Quantity you submitted is invalid.');
-        return false;
-    }
-    return true;
-}
-var isinstock ='<h2 class=\"blue\">How do I know if an item is in stock? </h2><div class=\"margin_t\">Unlike many other web sites, we only sell items that are physically available in our warehouse for immediate shipment. To check whether a certain item is in stock, simply attempt to add the item to your shopping cart. If you are able to add it to your shopping cart, then it means it is in stock and ready for immediate shipment! </div><br><span class=\"red\">NOTE: there is technical time gap for syncronizing data between website system and warehouse real inventory system, we will contact you in case your order is out of order because of this matter. </span></div>';
-var payment_option='<h2 class=\"blue\">Payment methods available in LinkedNew.com:</h2><dl class=\"dl_dot pad_10px\"><dt>PayPal</dt><dt>Money Order</dt><dt>Western Union</dt><dt>Wire Transfer</dt><dt>E-Check</dt><dt>Credit Card (Visa, Master Card, Amex, Discover)</dt></dl><div>Please note: we only ship to the address <BR/> exactly same as the billing address,<br /> e.g. the address shown on your billing statements.<br>If you want to pay money order/west union/e-check, we will release the order untill the fund is cleared. <br><img src="assets/images/bottom-payment.gif"><br>Payment Transaction is processed under <span class=\"red\">128bit</span> <secure layer via Yahoo&reg;, You are <span class=\"red\">100%</span> protected.</div>';
-var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin_t red\">We will email the shipping tracking number right after we ship out your order. You can choose whichever freight method best for you when you place an order. LinkedNew.com offers three different international shipping methods:</div><dl class=\"dl_dot pad_10px\"><dt>Standard shipping (USPS First Class): Normally takes 5 to 10 days.</dt><dt>Priority shipping (USPS Priority with Tracking#): Normally takes 3 to 7 days.</dt><dt>Express Shipping(EMS,UPS): Normally takes 3 to 5 days</dt></dl><div>Time of transit may vary depending on your location.<br />All orders are shipped <span class=\"red\">within 24 hours</span> from our <span class=\"red\">USA warehouses with Free gift boxes</span> unless notified at website</div>';
-    </script>
-         <script type="text/javascript">
-
-             $(function() {
-
-                 $.ajax({
-                     type: "POST",
-                     url: "ShoppingCartHandler.ashx",
-                     // data: { productID: productIDVal, action: "addToBasket"},
-                     //
-                     data: { action: "getInventory", sku: "126000061-0", warehouseID: "LA" },
-                     success: function(theResponse) {
-                         if (theResponse == '') {
-                             $p('expressCheckout').innerHTML = "";
-                             $p('selectArea').innerHTML = "<b><font color=red>Out Of Order</font></b>";
-
-                         }
-                         else {
-
-                             if (theResponse <= 0) {
-
-                                 $p('expressCheckout').innerHTML = "";
-                                 $p('selectArea').innerHTML = "<b><font color=red>Out Of Order</font></b>";
-                             }
-                             else if (theResponse <= 5) {
-
-                                 $p('lowInventory').innerHTML = "<li><br /><font color=red>Very Low Inventory</font></li>";
-                             }
-                             //$p("#productPriceWrapRight11").html('<div class="shop">已经加入购物车</div>');
-                         }
-
-
-                     }
-
-                 });
-
-
-                 return false;
-             }
-       );
-
-        </script>
 </head>
-<body>
+<body id="productscategoryBody">
+    <div style="display: none" id="pop_window">
+    </div>
+
+
     <!--begin header of linkednew-->
     <div id="uni-header" class="widget w-uniHeader">
         <h1>
@@ -2467,889 +2337,72 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
     <!-- end all category -->
 
 
-    <div style="display: none" id="pop_window">
-    </div>
-
-    <!-- main content -->
+    <!-- BOF main -->
     <div id="wrapper" class="widget">
-
-
-        <div id="nav_bread_crumb" class="product_title margin_t">
-        <img src="http://www.linkednew.com/images/arrow_down.gif" width="11" height="11">&nbsp; You are here: <a href="/"  class="blue" >Home</a>&gt; <a href="/search.aspx?key=Electronic&allKey=&cat=1&psize=24&gridview=0&page=1 "   class="blue" >Electronic</a>&gt; <a href="/search.aspx?key=Electronics Gadgets&allKey=&cat=1&psize=24&gridview=0&page=1 "   class="blue" >Electronics Gadgets</a>
-        </div>
-
-        <!-- bodyblock start -->
         <div id="bodyblock">
-            <!-- BOF Bought This Item-->
-            <!-- EOF Bought This Item-->
-            <div style="z-index: 11525; position: absolute; visibility: hidden; top: 187px; left: 263px"
-                id="ZoomSpin">
-                <img id="SpinImage" src="http://www.linkednew.com/images/loading.gif">
-            </div>
-            <div style="z-index: 11499; position: absolute; visibility: hidden" id="ZoomBox">
-                <div style="position: absolute; visibility: hidden; top: 5px; right: 11px" id="ZoomClose">
-                    <img style="cursor: pointer" border="0" src="http://www.linkednew.com/images/close.gif" width="13" height="13">
+            <!-- BOF LEFT -->
+            <div class="minframe fl">
+                <!-- BEGIN   Custom Images Chat Button Code -->
+                <div id="ciiJ4U" style="z-index: 100; position: absolute">
                 </div>
-            </div>
-            <div class="clear">
-            </div>
-            <div style="padding-bottom: 2px; padding-left: 0px; padding-right: 0px; padding-top: 2px"
-                class="margin_t allborder">
-                <div class="for_gray_bg">
-                    <!-- product image zooming box -->
-                    <div id="product-zooming-box">
-                        <ul class="clearfix" id="image-zooming">
-                            <li>
-                            <!-- This is the large (zoomed) image source: -->
-                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20140320060333.jpg" title="" />
-                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20140320060333.jpg" />
-                            </li>
-                            <li>
-                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20142508122537-126000061.jpg" title="" />
-                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20142508122537-126000061.jpg" />
-                            </li>
-                            <li>
-                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20142508122557-126000061.jpg" title="" />
-                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20142508122557-126000061.jpg" />
-                            </li>
-                            <li>
-                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143108123137-126000061.jpg" title="" />
-                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143108123137-126000061.jpg" />
-                            </li>
-                           <li>
-                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143208123236-126000061.jpg" title="" />
-                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143208123236-126000061.jpg" />
-                            </li>
-                           <li>
-                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20143208123256-126000061.jpg" title="" />
-                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20143208123256-126000061.jpg" />
-                            </li>
-                            <li>
-                            <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20144508124510-126000061.jpg" title="" />
-                            <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20144508124510-126000061.jpg" />
-                            </li>
-                        </ul>
-                        <div class="share-product-image">
-                            <a class="btn btn-info" href="#shareimages">
-                                    Share your images with others
-                            </a>
-                        </div>
-                    </div>
-                    <!-- BOF Product Tools-->
-                    <div id="product_info_con" class="fr black">
-                        <form enctype="multipart/form-data" onsubmit="return check_product(this);" method="post"
-                        name="cart_quantity_frm" action="http://www.LinkedNew.com/shoppingcart/viewcart.aspx">
-                        <input value="126000061" type="hidden" name="products_id">
-                        <!-- BOF Product Content-->
-                        <div class="fl pad_product line_180">
-                            <h1 style="font-size: 16px">
-                                HV-800 Wireless Bluetooth Sports Headset Stereo Music Headset Universal Neckband for cellphones blue</h1><!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style ">
+                <div id="sciJ4U" style="display: inline">
+                </div>
+                <div id="sdiJ4U" style="display: none">
+                </div>
 
-<a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_1"></a>
-<a class="addthis_button_preferred_3"></a>
-<a class="addthis_button_preferred_4"></a>
-<a class="addthis_button_compact"></a>
-<a class="addthis_counter addthis_bubble_style"></a>
-</div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5136dd837ac28da1"></script>
-<!-- AddThis Button END -->
-                            <ul class="pad_10px">
-                                <li>Item #126000061 <span class="gray">( date added:4/20/2014 , 61  customers visited ) </span></li>
-                                <li><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star_gray"></span>&nbsp;<a href="HV-800-Wireless-Bluetooth-Sports-Headset-Stereo-Music-Headset-Universal-Neckband-for-cellphones-blue-126000061.html#b"style="text-decoration: underline; underline; color: #1E4E8E;">(Write a review)</a> </li>
-                                <div class="hr_d">
-                                </div>
-                                <li class="big margin_t">Retail price:&nbsp;<del>US$ 29.24</del>
-                                    <h3 class="relative">
-                                        Our Price US$:&nbsp; <span style="padding-left: 10px" id="products_price_unit" class="red">
-                                            22.49</span>&nbsp;&nbsp;<img  title="free shipping" src="http://www.linkednew.com/images/freeshipping.gif" />
-                                    </h3>
-                                    <li class="big">Start from:&nbsp;1 Unit(s)<input id="sps" name="sps" type="hidden" />
-                                <li class="big">
-                                    <style>
-                                        #r_attr
-                                        {
-                                            padding-bottom: 5px;
-                                            padding-left: 5px;
-                                            width: 260px;
-                                            padding-right: 5px;
-                                            background: #f0f0f0;
-                                            margin-left: 100px;
-                                            padding-top: 5px;
-                                        }
-                                        #r_attr DT
-                                        {
-                                            margin-top: 4px;
-                                            text-indent: 2px;
-                                            width: 50%;
-                                            float: left;
-                                        }
-                                    </style>
-                                    <!--BOF DL-->
-                                    <dl style="display: none" id="r_attr">
-                                        <div class="line_120 b">
-                                            Fill in your details to get a special dress tailor-made for you. Please note a <span
-                                                id="xiaohong">US$ 00.00</span> fee applies.</div>
-                                        <dt>Bust :
-                                            <input id="attrib-28-0" disabled maxlength="4" size="4" name="id[txt_28]" rel="1"
-                                                price=" (US$ 19.99) "></dt>
-                                        <dt>Waist :
-                                            <input id="attrib-29-0" disabled maxlength="4" size="4" name="id[txt_29]" rel="1"
-                                                price="0"></dt>
-                                        <dt>Hips :
-                                            <input id="attrib-30-0" disabled maxlength="4" size="4" name="id[txt_30]" rel="1"
-                                                price="0"></dt>
-                                        <dt>Hollow to Hem :
-                                            <input id="attrib-31-0" disabled maxlength="4" size="4" name="id[txt_31]" rel="1"
-                                                price="0">
-                                            <div class="clear">
-                                            </div>
-                                            <span id="custom_price" class="hide">(US$ 19.99) </span></dt>
-                                    </dl>
-                                    <!--EOF DL-->
-                                    <li class="margin_t"><a class="blue u" onclick="showBestPrice()">Lowest Price Guaranteed
-                                        &gt;&gt;</a><span id="status" class="red"></span>
-                                        <br />
-                                        <a class="blue u" onclick="showTellFriends()">Email Your Friend This Page &gt;&gt;</a><span
-                                            id="Span1" class="red"></span></li>
-                            </ul>
-                            <ul>
-                                <ul class="margin_t">
-                                    <div class="use_round center" id="TellFriends" style="display: none">
-                                        <em><b></b></em>
-                                        <div class="use_round_con big">
-                                            <h3>
-                                                <strong id="Strong2" class="red">
-                                                    <img src="http://www.linkednew.com/images/close.gif" onclick="showTellFriends()" />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email Your Friend This Page.</strong></h3>
-                                            Just fill in the blanks and press "Email a Friend", we'll send them an Email for
-                                            you. LinkedNew.com will not use the Email address for any other purpose. By sending
-                                            this link to a friend, you agree to the Email agreement.
-                                            <iframe style="border-right-width: 0px; width: 350px; border-top-width: 0px; border-bottom-width: 0px;
-                                                height: 240px; border-left-width: 0px;" id="Iframe2" src="http://www.linkednew.com/products/tellafriends.aspx?pId=126000061"
-                                                scrolling="NO" frameborder="0;" name="reviewIframe1"></iframe>
-                                        </div>
-                                        <b><em></em></b>
-                                        <div class="clear">
-                                            &nbsp;
-                                        </div>
-                                    </div>
-                                    <div class="use_round center" id="bestprice" style="display: none">
-                                        <em><b></b></em>
-                                        <div class="use_round_con big">
-                                            <h3>
-                                                <strong id="Strong1" class="red">
-                                                    <img src="http://www.linkednew.com/images/close.gif" onclick="showBestPrice()" />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Price is not the lowest?</strong></h3>
-                                            just tell us where you found the lowest price for this same item, we will beat the
-                                            price, and we will contact you later for the best deal.
-                                            <br />
-                                            <table>
-                                                <tr>
-                                                    <td valign="top" width="110">
-                                                        Item URL(http://):&nbsp;<span class="red">*</span>
-                                                    </td>
-                                                    <td valign="top" colspan="2">
-                                                        <input class="input_5" id="low_customername" onkeydown="submitLowestPrice()" onkeyup="submitLowestPrice()"
-                                                            name="low_customername">
-                                                        <div class="big_">
-                                                            copy the website address and paste it here
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td valign="top" width="110">
-                                                        Your Email:&nbsp;<span class="red">*</span>
-                                                    </td>
-                                                    <td valign="top" colspan="2">
-                                                        <input class="input_5" onkeydown="submitLowestPrice()" onkeyup="submitLowestPrice()"
-                                                            id="low_customeremail" name="low_customeremail">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3" align="right">
-                                                        <div id="lowprice_div">
-                                                            <span class="button">&nbsp;Submit Lowest Price Info&nbsp;</span>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <b><em></em></b>
-                                        <div class="clear">
-                                            &nbsp;
-                                        </div>
-                                    </div>
-                                    <div class="use_round center" id="expressCheckout">
-                                        <em><b></b></em>
-                                        <div class="use_round_con big">
-                                            <h3>
-                                                Express Check Out US$:<strong style="padding-left: 10px" id="products_price_unit1"
-                                                    class="red">22.49</strong></h3>
-                                            If you buy only one single item, check out right here.
-                                            <br />
-                                            <select style="border-bottom: #ddd 1px solid; border-left: #ddd 1px solid; width: 310px;
-                                                border-top: #ddd 1px solid; border-right: #ddd 1px solid" id="attrib-9" name="id[6]"
-                                                rel="0">
-                                                <option selected value="" price="(US$ 0)">--Select Shipping--</option>
-                                                <option value="Standard First Class -Free (USA Only)" price="(US$ 0)">Standard First
-                                                    Class -Free (USA Only)</option>
-                                                <option value="Priority $15.0 (USA Only)" price="(US$ 15)">Priority $15.0 (USA Only)</option>
-                                                <option value="International Priority $30 ( Outside USA )" price="(US$ 25)">International
-                                                    Priority $30 ( Outside USA )</option>
-                                                <option value="Overnight $29.0 (USA Only)" price="(US$ 29)">Overnight $29.0 (USA Only)</option>
-                                                <option value="International Express $50 ( Outside USA )" price="(US$ 49)">International
-                                                    Express $50 ( Outside USA )</option>
-                                            </select>
-                                            <div id="xcheckout">
-                                            </div>
-                                        </div>
-                                        <b><em></em></b>
-                                    </div>
+                <script type="text/javascript">var seiJ4U=document.createElement("script");seiJ4U.type="text/javascript";var seiJ4Us=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/LinkedNew/safe-standard.js?ps_h=iJ4U\u0026ps_t="+new Date().getTime()+"\u0026online-image=http%3A//www.LinkedNew.com/images/reponline.jpg\u0026offline-image=http%3A//www.LinkedNew.com/images/repoffline.jpg";setTimeout("seiJ4U.src=seiJ4Us;document.getElementById('sdiJ4U').appendChild(seiJ4U)",1)</script>
+
+                <noscript>
+                    <div style="display: inline">
+                        <a href="http://www.providesupport.com?messenger=LinkedNew">Chat Support</a></div>
+                </noscript>
+                <!-- END   Custom Images Chat Button Code -->
+                <!-- BOF Categories Left Nav -->
+                <div id="category_menu" class="margin_t allborder bg_box_gray">
+                    <h3 class="small-block-title">
+                        Customer Service
+                    </h3>
+                    <dl class="pad_bottom big">
+                        <dd>
+                            <div class="pad_1em">
+                                <ul class="pad_1em">
+                                    <li><a href="/cs_return.aspx">Return and Refund </a>
+                                    <li><a href="/trackOrder.aspx">Order Status</a>
+                                    <li><a href="/cs_safeshopping.aspx">Safe Shopping</a>
+                                    <li><a href="/cs_shipping.aspx">Shipping and Delivery</a>
+                                    <li><a href="/cs_qa.aspx">Questions & Answers</a>
+                                    <li><a href="/privacy.aspx">Privacy Notice</a>
+                                    <li><a href="/testimonial.aspx">Testimonials</a> <a href="/dropship.aspx">Dropship Service</a>
+                                    <li><a href="/cs.aspx">Contact Us</a>
                                 </ul>
-                            </ul>
-                            <ul>
-                                <ul class="margin_t">
-                                    <div class="use_round center">
-                                        <em><b></b></em>
-                                        <div class="use_round_con big">
-                                            It usually takes <strong class="big2 red">only less than 24 hours </strong>to ship
-                                            out your order with <strong class="big2 red">FREE gift box</strong>, direct from
-                                            our multi wearhouses. You will mostly get your order <strong class="big2 red">within
-                                                1-10 </strong>business days, the exact delivery time are based on the freight
-                                            service you choose when you check out, e.g. (UPS,US Post Office). For International
-                                            shipping outside USA, the delivery time may vary.
-                                            <br>
-                                            <img src="http://www.linkednew.com/images/approx7days.gif"></img>
-                                        </div>
-                                        <b><em></em></b>
-                                    </div>
-                                </ul>
-                            </ul>
-                        </div>
-                        <!-- EOF Product Tools-->
-                        <!-- BOF Product Shipping Cart-->
-                        <div class="minframe fr pad_top">
-                            <ul id="product_price" class="white_bg allborder pad_10px">
-                                <li><span id="products_price_all" name="priceall" class="red b big">US$ 22.49
-                                </span>&nbsp; <span id="shipping_rule">+ Shipping Cost</span> </li>
-                            </ul>
-                            <a name="show"></a>
-                            <ul class="g_t_c product_ul_h">
-                                <strong>Start from:&nbsp;</strong>
-                                <input onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''));changePrice();"
-                                    style="width: 30px" id="cart_quantity" onkeyup="value=value.replace(/[^\d]/g,'');changePrice();"
-                                    value="1" maxlength="6" name="cart_quantity">
-                                <strong>Unit(s)</strong>
-                                <li style="margin-top: 3px"><a title="Is In Stock" onclick="floatBox(this,'isinstock');"
-                                    href="javascript:;">
-                                    <img class="relative" border="0" src="http://www.linkednew.com/images/in_stock_button.gif">
-                                </a></li>
-                            </ul>
-                             <ul id="lowInventory"  class="g_t_c gray">
-                            </ul>
-                            <ul id="selectArea" class="g_t_c product_ul_h relative">
-                            </ul>
-                            <ul id="tmp_tit" class="g_t_c gray">
-                            </ul>
-
-                            <script type="text/javascript">
-    function validateS(){
-        this.ini = init;
-        this.checking = checkS;
-        this.outArr = new Array();
-        this.inArr = new Array();
-        this.errStr = '';
-    }
-    var tempPrice = new Array();
-    var sps=new Array();
-    function init(){
-        var formsEl = document.forms['cart_quantity_frm'].elements;
-
-        for(i=0;i<formsEl.length;i++){
-            if(formsEl[i].id.substr(0,7) == 'attrib-'){
-
-                $p(formsEl[i].id).value = "";
-                if(formsEl[i].tagName == "SELECT"){
-                    $p(formsEl[i].id).onchange = function(){
-
-                        if(tempPrice[this.id])
-                            extraPrice -= tempPrice[this.id];
-                        var t = this.selectedIndex;
-                    //sps.push(this.options[t].text);
-
-                        extraPrice += Number(stripPrice(this.options[t].getAttribute('price')));
-                        tempPrice[this.id] = Number(stripPrice(this.options[t].getAttribute('price')));
-                        checkS();
-                    }
-                }else{
-                    $p(formsEl[i].id).onkeyup = function() {
-                        if(this.parentNode.tagName!="DT"){
-                            if(this.value!=""){
-                                if(!tempPrice[this.id]){
-                                    extraPrice += Number(stripPrice(this.getAttribute('price')));
-                                    tempPrice[this.id] = Number(stripPrice(this.getAttribute('price')));
-                                }
-                            }else{
-                                if(tempPrice[this.id]){
-                                    extraPrice -= tempPrice[this.id];
-                                    tempPrice[this.id] = null;
-                                }
-                            }
-                        }
-                        checkS();
-                    }
-                }
-
-
-                if(formsEl[i].parentNode.tagName=="DT"){
-                    if(formsEl[i].id.substr(0,8)!= "attrib-9")
-                    this.inArr.push(formsEl[i].id);
-
-                }else{
-                  if(formsEl[i].id.substr(0,8)!= "attrib-9"){
-                    //alert($p(formsEl[i].id).selectedIndex+" "+i);
-                     if($p(formsEl[i].id).selectedIndex=="0")
-                    {
-                   // var tmparr = [formsEl[i].id,formsEl[i].previousSibling.innerHTML.replace(':','')];
-                    var tmparr = [formsEl[i].id,$p(formsEl[i].id+"-0").innerHTML.replace(':','')];
-                     this.outArr.push(tmparr);
-                     }
-                    }
-                }
-            }
-        }
-        if(this.outArr.length>0)
-            $p('tmp_tit').innerHTML = 'To Add to Shopping Cart,<br />choose the option from left.';
-    }
-    function checkS() {
-        var err = '';
-        for(i=0;i<vs.outArr.length;i++){
-            if($p(vs.outArr[i][0]).tagName == "SELECT"){
-                if($p(vs.outArr[i][0]).disabled == false&&$p(vs.outArr[i][0]).value.trim() == "")
-                    err += vs.outArr[i][1] + ',';
-            }else{
-                if($p(vs.outArr[i][0]).getAttribute('rel')==1&&$p(vs.outArr[i][0]).value.trim() == "")
-                    err += vs.outArr[i][1] + ',';
-
-            }
-        }
-        for(i=0;i<vs.inArr.length;i++){
-            if($p(vs.inArr[i]).value.trim() == ""&&$p(vs.inArr[i]).disabled==false&&$p(vs.inArr[i]).getAttribute('rel')==1){
-                //err += $p("r_attr_div").innerHTML + ',';
-                err += $p("attrib-20-0").innerHTML + ',';
-                break;
-            }
-        }
-        changePrice();
-
-        vs.errStr = err;
-        formatOutput();
-    }
-    function showBestPrice(){
-    if($p('bestprice').style.display == "none")
-    {
-    $p('bestprice').style.display ="block";
-    }
-    else
-    $p('bestprice').style.display ="none";
-    }
-
-    function showTellFriends(){
-    if($p('TellFriends').style.display == "none")
-    {
-    $p('TellFriends').style.display ="block";
-    }
-    else
-    $p('TellFriends').style.display ="none";
-    }
-    function change_attr(el){
-        if(!$p('r_attr'))
-            return;
-        $p("xiaohong").innerHTML = $p("custom_price").innerHTML.replace("(","").replace(")","");
-        var custom_price = 0;
-
-        if(Number(stripPrice($p("custom_price").innerHTML)))
-            custom_price = Number(stripPrice($p("custom_price").innerHTML));
-
-        if($p('chk_r_attr').checked){
-            $p('r_attr').style.display = "block";
-            $p(el).disabled = true;
-            $p(el).selectedIndex = 0;
-            if(tempPrice[el]){
-                extraPrice -= Number(tempPrice[el]);
-                tempPrice[el] = 0;
-            }
-            extraPrice += custom_price;
-            for(i=0;i<vs.inArr.length;i++){
-                $p(vs.inArr[i]).disabled = false;
-            }
-
-        }else{
-            $p('r_attr').style.display = "none";
-            $p(el).disabled = false;
-            extraPrice -= custom_price;
-            for(i=0;i<vs.inArr.length;i++){
-                $p(vs.inArr[i]).disabled = true;
-
-            }
-        }
-
-        vs.checking();
-    }
-    function showTit(key){
-        (key==0)?$p('tit_t').style.display = '':$p('tit_t').style.display = 'none';
-    }
-    function formatOutput(){
-
-                //$p('sps').value=sps;
-
-        if(vs.errStr!=''){
-            var tt = vs.errStr.substr(0,vs.errStr.length-1);
-
-            tt = tt.replace(/,/g,' and ')
-            str = '<img src="http://www.linkednew.com/images/car.gif" border="0"  onmouseout=showTit(1) onmouseover=showTit(0); />'+'<div id="tit_t" style="display:none">Please Select<br />'+tt+'<b></b></div>';
-        }else{
-            str = '<input type="image" src="http://www.linkednew.com/images/car.gif" border="0" alt="Add to Cart" title=" Add to Cart " />';
-        }
-        $p('selectArea').innerHTML = str;
-
-    }
-    var vs = new validateS();
-    vs.ini();
-    vs.checking();
-
-                            </script>
-
-                            <div class="seal_m_en center">
                             </div>
-                            <ul class="g_t_c">
-                                <li style="margin-top: 3px"><a title="Shipping Methods" onclick="floatBox(this,'shipping_info');"
-                                    href="javascript:;">
-                                    <img class="relative" border="0" src="http://www.linkednew.com/images/shipping.gif">
-                                </a>
-                                <li style="margin-top: 3px"><a title="Payment methods" onclick="floatBox(this,'payment_option');"
-                                    href="javascript:;">
-                                    <img class="relative" border="0" src="http://www.linkednew.com/images/payment.gif">
-                                </a>
-                                <li style="margin-top: 3px">
-                                    <!-- BEGIN ProvideSupport.com Custom Images Chat Button Code -->
-                                    <div id="cilPIg" style="z-index: 100; position: absolute">
-                                    </div>
-                                    <div id="sclPIg" style="display: inline">
-                                    </div>
-                                    <div id="sdlPIg" style="display: none">
-                                    </div>
-
-                                    <script type="text/javascript">var selPIg=document.createElement("script");selPIg.type="text/javascript";var selPIgs=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/LinkedNew/safe-standard.js?ps_h=lPIg\u0026ps_t="+new Date().getTime()+"\u0026online-image=http%3A//www.LinkedNew.com/images/ask.gif\u0026offline-image=http%3A//www.LinkedNew.com/images/ask.gif";setTimeout("selPIg.src=selPIgs;document.getElementById('sdlPIg').appendChild(selPIg)",1)</script>
-
-                                    <noscript>
-                                        <div style="display: inline">
-                                            <a href="http://www.providesupport.com?messenger=LinkedNew">Chat Support</a></div>
-                                    </noscript>
-                                    <!-- END ProvideSupport.com Custom Images Chat Button Code -->
-                                    </a>
-                                <li>
-                                    <br />
-                                    <strong class="red">Contact Us<br />
-                                        </strong><br />
-                                           info@LinkedNew.com</li>
-                            </ul>
-                        </div>
-                        </form>
-
-                        <script>changePrice();</script>
-
-                        <!-- EOF ProductShipping Cart-->
-                    </div>
-                    <!-- EOF Product Tools-->
-                    <div class="clear">
-                        &nbsp;</div>
+                        </dd>
+                    </dl>
                 </div>
-            </div>
-            <div class="clear">
-            </div>
-            <div class="margin_t maxwidth">
-                <div id="product_main_con" class="fl black">
-                    <!-- BOF Product Main-->
-                    <div class="product-block block-product-description">
-                        <div>
-                            <h2 class="blue line_180 block-title">
-                                Description:&nbsp;</h2>
+                <!-- EOF Categories Left Nav -->
+                <!-- BOF Our Customers Saying -->
+                <div id="customers_saying" class="allborder margin_t g_t_c pad_top blue_con">
+                    <img style="margin-top: 3px" border="0" src="assets/images/customers_saying.gif">
+                    <div class="g_t_l pad_top">
 
-                            <div id="Item_Description_Spc" class="pad_10px pad_l_28px big relative">
-                                <p>
-                                    <span class="label"><span class="desctitle">Descriptions:</span><br>
-Newest Wireless CSR 3.0 Bluetooth headphone headset In earphone HV-800 stereo two-channel MP3 Music Handsfree with vibration microphone for iPhone, Samsung, HTC and other bluetooth devices.
-<br><br>
-This product uses the new headset shape design, using the world famous brands CSR BC05 Bluetooth Stereo Bluetooth chips, to ensure high-fidelity sound quality and stable performance and excellent call quality. This product supports Bluetooth V2.1 version, support for Bluetooth A2DP and calling features. Battery time supports up to 8-15 hours. It can connect bluetooth with two devices.
-<br><br>
+                        <script>
+	   var customers_saying_count = 1;
+                        </script>
 
-Specifications:<br>
-1. Charging voltage: DC5V 150mAh <br>
-2. Working current: 25-35mA <br>
-3. Bluetooth A2DP Working range: 10m <br>
-4. Output power: 35mW <br>
-5. Frequency range: 2.401-2.480GHz <br>
-6. Distortion factor: ≤1% <br>
-7. Frequency response: 20Hz-20KHz <br>
-8. Working Time: Music/ HuaTong state 6-8 hours (The Volume will affect the time)<br>
-9. SNR: S/N≥95 <br>
-10. Charging Time: 1h-2h <br>
-11. Talk time: 8-15 hours, play time: 6-10 hours<br>
-12. Music Playing Time: up to 10 hours<br>
-13. Frequency Response: 20 ~ 20000Hz<br>
-14. Sensitivity: 80dB<br>
-15. Impedance: 32 ohms<br>
-16. peaker Power: 2 x 18mW<br>
-17. Weight: 118g<br>
-18. Color: Black White Red Pink Blue
+                        <script type="text/javascript" src="assets/js/customers_say.js"></script>
 
-
-<br><br>
-
-
-
-<span class="desctitle">Package include:</span><br>
-1 x HV-800 Bluetooth Headset<br>
-1 x User Manual<br>
-1 x USB charger Cable</span></p>
-                            </div>
-
-                            <script type="text/javascript">
-                if($p("Item_Description_Spc")) $p("Item_Description_Spc").innerHTML=$p("Item_Description_Spc").innerHTML.replace(/<embed/ig,"<embed wmode='Transparent'")
-                            </script>
-
-                        </div>
-                    </div>
-                    <!-- EOF Product Main-->
-                    <div id="p_review" class="product-block" >
-                        <!-- BOF Product Reviews -->
-                        <div class="pad_10px pad_l_28px big" style="padding:0;">
-
-                            <div id="fd">
-                            </div>
-
-                            <script type="text/javascript">
-
-                            onload=function(){
-                                 var feedbacks  =location.search.replace("?","");
-                                 if(feedbacks.substring(0,3)=="168")
-                                 $p("status").innerHTML="&nbsp;"+unescape(feedbacks).replace("168","");
-
-                                  else
-                                  $p('fd').innerHTML=unescape(feedbacks);
-
-                                }
-
-                            </script>
-
-                        </div>
-
-                        <h2 id="shareimages" class="margin_t blue  block-title">
-                            Write a Review:
-                        </h2>
-                        <div class="pad_bottom pad_l_28px big">
-                            <p>
-                                Tell us what you think about this item, share your opinion with other people. Please
-                                make sure that your review focus on this item. All the reviews are moderated and
-                                will be reviewed within one business days. Inappropriate reviews will not be posted.
-                            </p>
-                            <p>
-                                Have any question or inquire for this item? Please contact <a class="red u" href="http://www.LinkedNew.com/cs.aspx"
-                                    target="_blank">Customer Service</a>. (Our customer representative will get
-                                back shortly.)</p>
-                            <ul class="inquiry">
-
-                                <script type="text/javascript">
-
-    function submitImg(){
-
-                 $p("txt_review").value= $p("txt_review").value.replace('<', '&lt;').replace('>', '&gt;');
-                  $p("review_title").value= $p("review_title").value.replace('<', '&lt;').replace('>', '&gt;');
-                  $p("customer_name").value= $p("customer_name").value.replace('<', '&lt;').replace('>', '&gt;');
-                  $p("customer_email").value= $p("customer_email").value.replace('<', '&lt;').replace('>', '&gt;');
-
-                if(fmChk_Reason($p("post_review"),'You must agree to our Terms of conditions')!=true)//不检查terms
-                return;
-                if(fmChk($p("post_review"))!=true)//检查terms
-                return;
-
-                document.forms["post_review"].submit();
-            }
- function submitLowestPrice()
- {  $p("low_customername").value= $p("low_customername").value.replace('<', '&lt;').replace('>', '&gt;');
-    $p("low_customeremail").value= $p("low_customeremail").value.replace('<', '&lt;').replace('>', '&gt;');
-    $p("lowprice_div").innerHTML="<a href=\"/sendemail.aspx?msg="+ $p("low_customername").value+" from email"+$p("low_customeremail").value+"\" border=\"0\"><span class=\"button\">&nbsp;Submit Lowest Price Info&nbsp;</span></a>";
-
-
- }
- function checkInput()
- {
-
-                var k=1000-$p("txt_review").value.length;
-                 $p("countxx").innerHTML="<span class=\"red\">"+k+"</span>"+" chars left, all special chars will be encoded";
-
-
-                  $p("txt_review").value= $p("txt_review").value.replace('<', '&lt;').replace('>', '&gt;');
-                  $p("review_title").value= $p("review_title").value.replace('<', '&lt;').replace('>', '&gt;');
-                  $p("customer_name").value= $p("customer_name").value.replace('<', '&lt;').replace('>', '&gt;');
-                  $p("customer_email").value= $p("customer_email").value.replace('<', '&lt;').replace('>', '&gt;');
-
-
- }
-
-
-                                </script>
-
-                                <form id="post_review" method="post" name="post_review" action="/review.aspx?pid=126000061">
-                                <input id="product_score" value="4" type="hidden" name="product_score">
-                                <input id="action" value="review" type="hidden" name="action">
-                                <table class="big" border="0" width="360">
-                                    <tbody>
-                                        <tr>
-                                            <td colspan="3">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3">
-                                                Indicates required fields<span class="red">*</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3">
-                                                <table>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="big">
-                                                                Rating:
-                                                            </td>
-                                                            <td>
-                                                                <div style="width: 75px; background: url(assets/images/unfilled.gif); cursor: pointer"
-                                                                    id="r_RatingBar" onmouseup="rating.stopSlide()" onmousemove="rating.doSlide(event)"
-                                                                    onmouseout="rating.resetHover()" onmousedown="rating.startSlide()" onclick="rating.setRating(event)">
-                                                                    <div style="width: 0px; background: url(assets/images/hover.gif) repeat-x; height: 14px"
-                                                                        id="r_Hover">
-                                                                        <div style="width: 60px; background: url(assets/images/sparkle.gif) repeat-x; height: 14px;
-                                                                            overflow: hidden" id="r_Filled">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div id="score_title">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-
-                                                <script type="text/javascript">
-        var rbi = new BvRatingBar('r_');
-        window.rating = rbi;
-
-                                                </script>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top" width="110">
-                                                Your Name:&nbsp;<span class="red">*</span>
-                                            </td>
-                                            <td valign="top" colspan="2">
-                                                <input class="input_5" id="customer_name" name="customer_name" chkrule="nnull" chkname="Your Name">
-                                                <div class="big_">
-                                                    Enter your Reviewer Nickname
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top" width="110">
-                                                Your Email:&nbsp;<span class="red">*</span>
-                                            </td>
-                                            <td valign="top" colspan="2">
-                                                <input class="input_5" id="customer_email" name="customer_email" chkrule="nnull/eml"
-                                                    chkname="Your Email">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top">
-                                                Review Title:&nbsp;<span class="red">*</span>
-                                            </td>
-                                            <td valign="top" colspan="2">
-                                                <input class="input_5" id="review_title" name="review_title" chkrule="nnull/max50"
-                                                    chkname="Review Title">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top" colspan="3">
-                                                <textarea onblur='if(this.value == "") this.className="textarea1 txt_review"' id="txt_review"
-                                                    class="textarea1 txt_review" onfocus='this.className="textarea1"' onkeydown="checkInput()"
-                                                    onkeyup="checkInput()" name="review_content" chkrule="nnull/max10000" chkname="Review Content"></textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top" colspan="3">
-                                                <div id="countxx">
-                                                </div>
-                                                Upload images from your computer:
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top" colspan="3">
-                                                <iframe style="border-right-width: 0px; width: 360px; border-top-width: 0px; border-bottom-width: 0px;
-                                                    height: 90px; border-left-width: 0px;" id="reviewIframe" src="http://www.linkednew.com/mv.aspx?pid=126000061"
-                                                    frameborder="0" scrolling="NO" name="reviewIframe"></iframe>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3" align="left">
-                                                <input value="1" type="checkbox" name="privacy_conditions" chkname="You must agree to our Terms of conditions"
-                                                    chkrule="ischeck">
-                                                Accept <a class="red u" href="http://www.LinkedNew.com/privacy.aspx">terms and conditions
-                                                </a>I have read and accept the Terms &amp; Conditions. The images I'm uploading
-                                                are my own and meet the content guidelines.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3" align="right">
-                                                <input id="Su" value="Submit Review" class="button" onclick="submitImg()" />
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                </form>
-                            </ul>
-                        </div>
-                        <!-- EOF Product Reviews -->
-                    </div>
-                    <div id="also" class="margin_t maxwidth" align="center">
-                        <iframe style="border-right-width: 0px; width: 720px; border-top-width: 0px; border-bottom-width: 0px;
-                            height: 200px; border-left-width: 0px;" id="Iframe1" src="http://www.linkednew.com/products/productsdetails.aspx?pId=126000061"
-                            scrolling="NO" frameborder="0;" name="reviewIframe1"></iframe>
-                    </div>
-
-                    <div class="clearfix">
-                    <!-- related cate -->
-                    <div id="relate_cate" class="fl allborder line_180">
-                        <h4 class="red line_30px in_1em">
-                            Related Categories
-                        </h4>
-                        <ul class="clearfix">
-                            <li><a title="USB Cable" href=" /search.aspx?key=Usb Cable&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                USB Cables </a></li>
-                            <li><a title="AC Adapter Chargers" href="/search.aspx?key=AC Charger&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                AC Adapter Chargers </a></li>
-                            <li><a title="Laptop Batteries" href="/search.aspx?key=Laptop Battery&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                Laptop Batteries </a></li>
-                            <li><a title="USB Speakers" href="/search.aspx?key=speaker&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                USB Speakers </a></li>
-                            <li><a title="Bluetooth Keyboards" href="/search.aspx?key=Bluetooth Keyboard&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                Bluetooth Keyboards </a></li>
-                            <li><a title="Led Accessories" href="/search.aspx?key=Led&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                Led Accessories </a></li>
-                            <li><a title="Hard Drive Related" href="/search.aspx?key=Hard Drive&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                Hard Drive Related </a></li>
-                            <li><a title="Fashion Replica Sunglasses" href="/search.aspx?key=Fashion sunglass&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                Fashion Replica Sunglasses</a></li>
-                            <li><a title="DC 12V 24V Switch Power" href="/search.aspx?key=switch power&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                12V 24V Switch Power </a></li>
-                            <li><a title="antenna" href="/search.aspx?key=antenna&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                Radio Antenna</a></li>
-                            <li><a title="iphone accessories" href="/search.aspx?key=iphone&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                Iphone Accessories</a></li>
-                            <li><a title="samsung phone accessories" href="/search.aspx?key=Samsung&allKey=&cat=1&psize=24&page=1&gridview=0">
-                                Samsung Phone </a></li>
-                        </ul>
-
-                    </div>
-                    <!-- BOF Search Feedback-->
-                    <div id="search_feedback" class="fr allborder line_180">
-                        <h4 class="line_30px">
-                            Search Feedback</h4>
-                        <ul>
-                            <li>Did you find what you were looking for?</li></ul>
-                        <ul>
-                            <li class="clear">If you need help or have other feedback for Customer Service.<a
-                                class="u" title="help" href="http://www.LinkedNew.com/">Click here</a></li></ul>
-                    </div>
-                    <!-- EOF Buyer Guide -->
                     </div>
                 </div>
-                <!-- right mini_frame start -->
-                <div class="mini_frame fr">
-                    <!-- BOF Recently Sold items-->
-                    <div class="allborder">
-                        <h3 class="pad_10px">
-                            Most Popular Items</h3>
-                        <img id="goup" class="hand" title="wholesale go up " border="0" alt="wholesale go up"
-                            src="http://www.linkednew.com/images//go_up.gif">
-                        <div style="height: 500px; overflow: hidden" id="recently_sold_items">
-                            <ul id="recently_sold_items_a" class="top_selling pad_10px pad_t">
-                                <li><a title="3500mAh Extended Battery + Charger for Samsung i9100 Galaxy S2 II Black" href="/3500mAh-Extended-Battery-Charger-for-Samsung-i9100-Galaxy-S2-II-Black-167000007.html"><img class="fl" title="3500mAh Extended Battery + Charger for Samsung i9100 Galaxy S2 II Black" border="0"  alt="3500mAh Extended Battery + Charger for Samsung i9100 Galaxy S2 II Black" src="http://www.linkednew.com/images/s/20131407121441.jpg"width="42" height="42"></a> <span><a title="3500mAh Extended Battery + Charger for Samsung i9100 Galaxy S2 II Black" href="/3500mAh-Extended-Battery-Charger-for-Samsung-i9100-Galaxy-S2-II-Black-167000007.html">3500mAh Extended Bat... </a><br><strong class="red">$ 17.44&nbsp;</strong> </span><li><a title="AC Adapter Charger Power Supply for Samsung" href="/AC-Adapter-Charger-Power-Supply-for-Samsung-123000050.html"><img class="fl" title="AC Adapter Charger Power Supply for Samsung" border="0"  alt="AC Adapter Charger Power Supply for Samsung" src="http://www.linkednew.com/images/s/20131212071231.jpg"width="42" height="42"></a> <span><a title="AC Adapter Charger Power Supply for Samsung" href="/AC-Adapter-Charger-Power-Supply-for-Samsung-123000050.html">AC Adapter Charger P... </a><br><strong class="red">$ 12.91&nbsp;</strong> </span><li><a title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 White" href="/Extended-Battery-TPU-Silicone-Back-Cover-Case-For-SAMSUNG-GALAXY-S3-SIII-i9300-White-166000022.html"><img class="fl" title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 White" border="0"  alt="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 White" src="http://www.linkednew.com/images/s/20130707120751.jpg"width="42" height="42"></a> <span><a title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 White" href="/Extended-Battery-TPU-Silicone-Back-Cover-Case-For-SAMSUNG-GALAXY-S3-SIII-i9300-White-166000022.html">Extended Battery TPU... </a><br><strong class="red">$ 6.96&nbsp;</strong> </span><li><a title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 Black" href="/Extended-Battery-TPU-Silicone-Back-Cover-Case-For-SAMSUNG-GALAXY-S3-SIII-i9300-Black-166000021.html"><img class="fl" title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 Black" border="0"  alt="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 Black" src="http://www.linkednew.com/images/s/20134606114645.jpg"width="42" height="42"></a> <span><a title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 Black" href="/Extended-Battery-TPU-Silicone-Back-Cover-Case-For-SAMSUNG-GALAXY-S3-SIII-i9300-Black-166000021.html">Extended Battery TPU... </a><br><strong class="red">$ 6.94&nbsp;</strong> </span><li><a title="Sky Blue Silicone Keyboard Cover Skin for Apple Macbook MAC 13"/15"/ 17"" href="/Sky-Blue-Silicone-Keyboard-Cover-Skin-for-Apple-Macbook-MAC-13--15---17--161000004.html"><img class="fl" title="Sky Blue Silicone Keyboard Cover Skin for Apple Macbook MAC 13"/15"/ 17"" border="0"  alt="Sky Blue Silicone Keyboard Cover Skin for Apple Macbook MAC 13"/15"/ 17"" src="http://www.linkednew.com/images/s/20123109073149.jpg"width="42" height="42"></a> <span><a title="Sky Blue Silicone Keyboard Cover Skin for Apple Macbook MAC 13"/15"/ 17"" href="/Sky-Blue-Silicone-Keyboard-Cover-Skin-for-Apple-Macbook-MAC-13--15---17--161000004.html">Sky Blue Silicone Ke... </a><br><strong class="red">$ 5.37&nbsp;</strong> </span><li><a title="Battery Charger for Samsung Galaxy S4 i9500 white" href="/Battery-Charger-for-Samsung-Galaxy-S4-i9500-white-123000068.html"><img class="fl" title="Battery Charger for Samsung Galaxy S4 i9500 white" border="0"  alt="Battery Charger for Samsung Galaxy S4 i9500 white" src="http://www.linkednew.com/images/s/20131021071048.jpg"width="42" height="42"></a> <span><a title="Battery Charger for Samsung Galaxy S4 i9500 white" href="/Battery-Charger-for-Samsung-Galaxy-S4-i9500-white-123000068.html">Battery Charger for ... </a><br><strong class="red">$ 6.16&nbsp;</strong> </span><li><a title="Original HP NX6120 10.8V 47Wh Battery" href="/Original-HP-NX6120-10-8V-47Wh-Battery-116146103.html"><img class="fl" title="Original HP NX6120 10.8V 47Wh Battery" border="0"  alt="Original HP NX6120 10.8V 47Wh Battery" src="http://www.linkednew.com/images/s/20123609053658.jpg"width="42" height="42"></a> <span><a title="Original HP NX6120 10.8V 47Wh Battery" href="/Original-HP-NX6120-10-8V-47Wh-Battery-116146103.html">Original HP NX6120 1... </a><br><strong class="red">$ 43.76&nbsp;</strong> </span><li><a title="6FT USB TV RCA Audio Video AV Cable Adapter for Apple iPad iPhone" href="/6FT-USB-TV-RCA-Audio-Video-AV-Cable-Adapter-for-Apple-iPad-iPhone-168000018.html"><img class="fl" title="6FT USB TV RCA Audio Video AV Cable Adapter for Apple iPad iPhone" border="0"  alt="6FT USB TV RCA Audio Video AV Cable Adapter for Apple iPad iPhone" src="http://www.linkednew.com/images/s/20125129105149.jpg"width="42" height="42"></a> <span><a title="6FT USB TV RCA Audio Video AV Cable Adapter for Apple iPad iPhone" href="/6FT-USB-TV-RCA-Audio-Video-AV-Cable-Adapter-for-Apple-iPad-iPhone-168000018.html">6FT USB TV RCA Audio... </a><br><strong class="red">$ 18.32&nbsp;</strong> </span>
-                            </ul>
-                            <ul id="recently_sold_items_b" class="top_selling">
-                            </ul>
-                        </div>
-                        <img id="godown" class="hand" title="wholesale go down " border="0" alt="wholesale go down"
-                            src="http://www.linkednew.com/images/go_down.gif"></div>
+                <!-- EOF Our Customers Saying -->
+                <!-- EOF Buyer Guide -->
+                <!-- BOF Wholesale Newsletter -->
+                <div id="wholesale_newsletter" class="bg_letter allborder margin_t">
+                    <form method="post" action="http://app.icontact.com/icp/signup.php" name="icpsignup"
+                    accept-charset="UTF-8" onsubmit="return verifyRequired();">
+                    <input type="hidden" name="redirect" value="http://www.icontact.com/www/signup/thanks.html" />
+                    <input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html" />
 
-                    <script>
-    var layerHeight = 500;
-    var iFrame = 1;
-    var iFrequency = 50;
-    var speed = 10;
-    var timer;
-    var n1 = $p("recently_sold_items");
-    var n2 = $p("recently_sold_items_a");
-    var n3 = $p("recently_sold_items_b");
-    var goup = $p("goup");
-    var godown = $p("godown");
-    var h1 = n2.offsetHeight-layerHeight;
-    if(n2.offsetHeight >= layerHeight)
-        n1.style.height = layerHeight;
-
-    else
-        n1.style.height = n2.offsetHeight;
-        n3.innerHTML = n2.innerHTML;
-
-        function move(){
-                if(n1.scrollTop >= n2.offsetHeight)
-                    n1.scrollTop -= (n2.offsetHeight - iFrame);
-
-                else
-                    n1.scrollTop += iFrame;
-                    if(n1.scrollTop<=0) n1.scrollTop=h1-n1.scrollTop;
-
-        }
-      goup.onmousedown = function (){iFrame = +speed;return false;};
-      goup.onmouseup = function(){iFrame=1};
-      godown.onmousedown = function (){iFrame = -speed;return false;};
-      godown.onmouseup = function(){iFrame=1};
-
-     timer = setInterval("move()",iFrequency);
-     n1.onmouseover=function() {clearInterval(timer);}
-     n1.onmouseout=function() {timer=setInterval("move()",iFrequency);iFrame=1;}
-                    </script>
-
-                    <!-- EOF Recently Sold items-->
-                    <!-- BOF We Also Suggest
-                    <div class="allborder pad_1em margin_t pad_bottom">
-                        <h4 class="line_120 margin_t">
-                            Top Sell Products</h4>
-                        <ul class="top_selling">
-                            <li><a title="3500mAh Extended Battery + Charger for Samsung i9100 Galaxy S2 II Black" href="/3500mAh-Extended-Battery-Charger-for-Samsung-i9100-Galaxy-S2-II-Black-167000007.html"><img class="fl" title="3500mAh Extended Battery + Charger for Samsung i9100 Galaxy S2 II Black" border="0"  alt="3500mAh Extended Battery + Charger for Samsung i9100 Galaxy S2 II Black" src="http://www.linkednew.com/images/s/20131407121441.jpg"width="42" height="42"></a> <span><a title="3500mAh Extended Battery + Charger for Samsung i9100 Galaxy S2 II Black" href="/3500mAh-Extended-Battery-Charger-for-Samsung-i9100-Galaxy-S2-II-Black-167000007.html">3500mAh Extended Bat... </a><br><strong class="red">$ 17.44&nbsp;</strong> </span><li><a title="AC Adapter Charger Power Supply for Samsung" href="/AC-Adapter-Charger-Power-Supply-for-Samsung-123000050.html"><img class="fl" title="AC Adapter Charger Power Supply for Samsung" border="0"  alt="AC Adapter Charger Power Supply for Samsung" src="http://www.linkednew.com/images/s/20131212071231.jpg"width="42" height="42"></a> <span><a title="AC Adapter Charger Power Supply for Samsung" href="/AC-Adapter-Charger-Power-Supply-for-Samsung-123000050.html">AC Adapter Charger P... </a><br><strong class="red">$ 12.91&nbsp;</strong> </span><li><a title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 White" href="/Extended-Battery-TPU-Silicone-Back-Cover-Case-For-SAMSUNG-GALAXY-S3-SIII-i9300-White-166000022.html"><img class="fl" title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 White" border="0"  alt="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 White" src="http://www.linkednew.com/images/s/20130707120751.jpg"width="42" height="42"></a> <span><a title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 White" href="/Extended-Battery-TPU-Silicone-Back-Cover-Case-For-SAMSUNG-GALAXY-S3-SIII-i9300-White-166000022.html">Extended Battery TPU... </a><br><strong class="red">$ 6.96&nbsp;</strong> </span><li><a title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 Black" href="/Extended-Battery-TPU-Silicone-Back-Cover-Case-For-SAMSUNG-GALAXY-S3-SIII-i9300-Black-166000021.html"><img class="fl" title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 Black" border="0"  alt="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 Black" src="http://www.linkednew.com/images/s/20134606114645.jpg"width="42" height="42"></a> <span><a title="Extended Battery TPU Silicone Back Cover Case For SAMSUNG GALAXY S3 SIII i9300 Black" href="/Extended-Battery-TPU-Silicone-Back-Cover-Case-For-SAMSUNG-GALAXY-S3-SIII-i9300-Black-166000021.html">Extended Battery TPU... </a><br><strong class="red">$ 6.94&nbsp;</strong> </span><li><a title="Sky Blue Silicone Keyboard Cover Skin for Apple Macbook MAC 13"/15"/ 17"" href="/Sky-Blue-Silicone-Keyboard-Cover-Skin-for-Apple-Macbook-MAC-13--15---17--161000004.html"><img class="fl" title="Sky Blue Silicone Keyboard Cover Skin for Apple Macbook MAC 13"/15"/ 17"" border="0"  alt="Sky Blue Silicone Keyboard Cover Skin for Apple Macbook MAC 13"/15"/ 17"" src="http://www.linkednew.com/images/s/20123109073149.jpg"width="42" height="42"></a> <span><a title="Sky Blue Silicone Keyboard Cover Skin for Apple Macbook MAC 13"/15"/ 17"" href="/Sky-Blue-Silicone-Keyboard-Cover-Skin-for-Apple-Macbook-MAC-13--15---17--161000004.html">Sky Blue Silicone Ke... </a><br><strong class="red">$ 5.37&nbsp;</strong> </span><li><a title="Battery Charger for Samsung Galaxy S4 i9500 white" href="/Battery-Charger-for-Samsung-Galaxy-S4-i9500-white-123000068.html"><img class="fl" title="Battery Charger for Samsung Galaxy S4 i9500 white" border="0"  alt="Battery Charger for Samsung Galaxy S4 i9500 white" src="http://www.linkednew.com/images/s/20131021071048.jpg"width="42" height="42"></a> <span><a title="Battery Charger for Samsung Galaxy S4 i9500 white" href="/Battery-Charger-for-Samsung-Galaxy-S4-i9500-white-123000068.html">Battery Charger for ... </a><br><strong class="red">$ 6.16&nbsp;</strong> </span><li><a title="Original HP NX6120 10.8V 47Wh Battery" href="/Original-HP-NX6120-10-8V-47Wh-Battery-116146103.html"><img class="fl" title="Original HP NX6120 10.8V 47Wh Battery" border="0"  alt="Original HP NX6120 10.8V 47Wh Battery" src="http://www.linkednew.com/images/s/20123609053658.jpg"width="42" height="42"></a> <span><a title="Original HP NX6120 10.8V 47Wh Battery" href="/Original-HP-NX6120-10-8V-47Wh-Battery-116146103.html">Original HP NX6120 1... </a><br><strong class="red">$ 43.76&nbsp;</strong> </span><li><a title="6FT USB TV RCA Audio Video AV Cable Adapter for Apple iPad iPhone" href="/6FT-USB-TV-RCA-Audio-Video-AV-Cable-Adapter-for-Apple-iPad-iPhone-168000018.html"><img class="fl" title="6FT USB TV RCA Audio Video AV Cable Adapter for Apple iPad iPhone" border="0"  alt="6FT USB TV RCA Audio Video AV Cable Adapter for Apple iPad iPhone" src="http://www.linkednew.com/images/s/20125129105149.jpg"width="42" height="42"></a> <span><a title="6FT USB TV RCA Audio Video AV Cable Adapter for Apple iPad iPhone" href="/6FT-USB-TV-RCA-Audio-Video-AV-Cable-Adapter-for-Apple-iPad-iPhone-168000018.html">6FT USB TV RCA Audio... </a><br><strong class="red">$ 18.32&nbsp;</strong> </span>
-                        </ul>
-                    </div>-->
-                    <!-- EOF We Also Suggest -->
-                    <!-- BOF Wholesale Newsletter -->
-                    <div id="wholesale_newsletter" class="bg_letter allborder margin_t">
-                        <form method="post" action="http://app.icontact.com/icp/signup.php" name="icpsignup"
-                        accept-charset="UTF-8" onsubmit="return verifyRequired();">
-                        <input type="hidden" name="redirect" value="http://www.icontact.com/www/signup/thanks.html" />
-                        <input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html" />
-
-                        <script type="text/javascript">
+                    <script type="text/javascript">
 function verifyRequired() {
   if (document.icpsignup["fields_email"].value == "") {
     document.icpsignup["fields_email"].focus();
@@ -3360,39 +2413,191 @@ function verifyRequired() {
 
 return true;
 }
-                        </script>
+                    </script>
 
-                        <input type="hidden" name="listid" value="9871312">
-                        <input type="hidden" name="specialid:9871312" value="KVY2">
-                        <input type="hidden" name="clientid" value="409875">
-                        <input type="hidden" name="formid" value="2334">
-                        <input type="hidden" name="reallistid" value="1">
-                        <input type="hidden" name="doubleopt" value="0">
-                        <span class="order_news_title">Newsletter</span> <span id="wholesale_newsletter_text"
-                            class="order_news"><b style="color: #000">Stay Tuned!</b><br>
-                            Get updates on sales and discount offers.</span> <span class="order_news">
-                                <input onblur="if (this.value == '') this.value = 'Your Email Address';" style="border-bottom: #ba6c6c 1px solid;
-                                    border-left: #ba6c6c 1px solid; border-top: #ba6c6c 1px solid; border-right: #ba6c6c 1px solid"
-                                    id="from" class="input_4 gray" onfocus="if (this.value == 'Your Email Address') this.value = '';"
-                                    value="Your Email Address" name="fields_email">
-                                <div class="margin_t">
-                                    <button type="submit">
-                                        <span>Subscribe</span></button><br>
-                                </div>
-                            </span>
-                        </form>
-                    </div>
-                    <!-- EOF Wholesale Newsletter -->
+                    <input type="hidden" name="listid" value="9871312">
+                    <input type="hidden" name="specialid:9871312" value="KVY2">
+                    <input type="hidden" name="clientid" value="409875">
+                    <input type="hidden" name="formid" value="2334">
+                    <input type="hidden" name="reallistid" value="1">
+                    <input type="hidden" name="doubleopt" value="0">
+                    <h3 class="small-block-title">Newsletter</h3>
+                    <span id="wholesale_newsletter_text"
+                        class="order_news"><b style="color: #000">Stay Tuned!</b><br>
+                        Get updates on sales and discount offers.</span> <span class="order_news">
+                            <input onblur="if (this.value == '') this.value = 'Your Email Address';" style="border-bottom: #ba6c6c 1px solid;
+                                border-left: #ba6c6c 1px solid; border-top: #ba6c6c 1px solid; border-right: #ba6c6c 1px solid"
+                                id="from" class="input_4 gray" onfocus="if (this.value == 'Your Email Address') this.value = '';"
+                                value="Your Email Address" name="fields_email">
+                            <div class="margin_t">
+                                <button type="submit">
+                                    <span>Subscribe</span></button><br>
+                            </div>
+                        </span>
+                    </form>
                 </div>
-                <!-- right mini_frame start -->
+                <!-- EOF Wholesale Newsletter -->
             </div>
-            <div class="clear">
+            <!-- EOF LEFT -->
+
+            <!-- BOF RIGHT -->
+            <div class="contact-right">
+            <div style="padding-top: 11px">
+                <!--start shopping cart-->
+                <form method="post" action="cs.aspx" id="Form1">
+                <div class="aspNetHidden">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMDUyNjYzMjhkZDHdbw1eqdr5pfNfrogE9HT1ad3IGjM5UxRCuHW0NFad" />
+                </div>
+
+                <div style="float: right">
+                    <div class=" ck_w_m allborder" style="width: 788px">
+                        <div class="check_box_tit black pad_1em">
+                            Customer Service</div>
+                        <div class="pad_10px">
+                            <ul>
+                                <li class="margin_t">
+                                LinkedNew.com is committed to your complete satisfaction; it is our top priority.
+                                In addition to offering a wide variety of fashion and hiphop products, we strive
+                                to provide you with the best service in the industry.
+                                <li class="margin_t"><span class="red b">Return</span><br />
+                                    Need to return your purchase? Find instructions <a href="/cs_return.aspx" style="text-decoration: underline">
+                                        right here</a>.
+                                <li class="margin_t"><span class="red b">Checking the Status of Your Order</span><br />
+                                    Need to know the status of your order ? <a href="/trackOrder.aspx" style="text-decoration: underline">
+                                        click right here</a>.
+                                <li class="margin_t"><span class="red b">Safe Shopping Guarantee</span><br />
+                                    Nervous about shopping online? Find out more about why shopping at LinkedNew.com is
+                                    safe,<a href="/cs_safeshopping.aspx" style="text-decoration: underline">click right
+                                        here</a>.
+                                <li class="margin_t"><span class="red b">LinkedNew.com Shipping and Delivery</span><br />
+                                    For information on our shipping costs and policies <a href="/cs_shipping.aspx" style="text-decoration: underline">
+                                        click here</a>.
+                                <li class="margin_t"><span class="red b">FAQ (Frequently Asked Questions) </span>
+                                    <br />
+                                    Have other questions? Check out our Frequently Asked Questions section <a href="/cs_qa.aspx"
+                                        style="text-decoration: underline">right here</a>.
+                                <li class="margin_t"><span class="red b">Contact Us</span><br />
+                                      Couldn't find the information you needed? Please contact us.
+                                     <br /> <font color=red>(because of the different system, this customer service only for orders placed at this website. For all other orders placed at other marketplace, please use their message centers to contact for speedup the service.)
+                                    </font><br />
+                                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;By Email ( all questions ): info@LinkedNew.com<br />
+                                     &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; ( customer service ): cs@LinkedNew.com<br />
+
+                                    <br />
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                </form>
+                <!--EOF Shopping Cart -->
+            </div>
+
+            <!-- BOF CENTER -->
+            <div class="right_big_con margin_t">
+                <div id="flashAD" style="text-align: center;">
+                   <a title="12v 24V DC power switch regulated" href="http://www.linkednew.com/search.aspx?key=switch%20power&allKey=&cat=1&psize=24&page=1&gridview=0"><img src="http://www.LinkedNew.com/images/powerSwitch.jpg"></a>
+
+                </div>
+
+                <script language="javascript">
+                var fImages=document.getElementById("flashAD").getElementsByTagName("A");var fLen=fImages.length;var fi=0;function flashAD(){for(i=0;i<fLen;i++){if(i==fi){fImages[i].style.display="block";}else{fImages[i].style.display="none";}}
+                fi++;if(fi>=fLen)
+                {fi=0;}}
+                flashAD();var int=self.setInterval("flashAD()",4000);
+                </script>
+
+            </div>
+
+            <div class="right_big_con margin_t">
+                <div id="relate_cate" class="fl allborder line_180">
+                       <h4 class="red line_30px in_1em">
+                        Related Categories</h4>
+                    <ul>
+                        <li><a title="USB Cable" href=" /search.aspx?key=Usb Cable&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            USB Cables </a></li>
+                        <li><a title="AC Adapter Chargers" href="/search.aspx?key=AC Charger&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            AC Adapter Chargers </a></li>
+                        <li><a title="Laptop Batteries" href="/search.aspx?key=Laptop Battery&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            Laptop Batteries </a></li>
+                        <li><a title="USB Speakers" href="/search.aspx?key=speaker&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            USB Speakers </a></li>
+                        <li><a title="Bluetooth Keyboards" href="/search.aspx?key=Bluetooth Keyboard&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            Bluetooth Keyboards </a></li>
+                        <li><a title="Led Accessories" href="/search.aspx?key=Led&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            Led Accessories </a></li>
+                        <li><a title="Hard Drive Related" href="/search.aspx?key=Hard Drive&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            Hard Drive Related </a></li>
+                        <li><a title="Fashion Replica Sunglasses" href="/search.aspx?key=Fashion sunglass&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            Fashion Sunglasses</a></li>
+                        <li><a title="DC 12V 24V Switch Power" href="/search.aspx?key=switch power&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            12V 24V Switch Power </a></li>
+                        <li><a title="antenna" href="/search.aspx?key=antenna&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            Radio Antenna</a></li>
+                        <li><a title="iphone accessories" href="/search.aspx?key=iphone&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            Iphone Accessories</a></li>
+                        <li><a title="samsung phone accessories" href="/search.aspx?key=Samsung&allKey=&cat=1&psize=24&page=1&gridview=0">
+                            Samsung Phone </a></li>
+                    </ul>
+                </div>
+                <!-- BOF Search Feedback-->
+                <div id="search_feedback" class="fr allborder line_12px">
+                    <h5 class="line_20px">
+                        Do magnetic bracelets work?
+                    </h5>
+                    "I can't tell you how much magnetic bracelets have helped my frozen shoulder. When
+                    I wear one, I am virtually free of pain; leave it off for a while and it begins
+                    to ache,......" -S.Betty, IL (Jan 19, 2008) Remark: Individual reaction may vary.
+                    <h5 class="line_20px">
+                        Study Finds:
+                    </h5>
+                    Magnetic Bracelets Reduce The Pain Of Osteoarthritis <a class="u" target="_blank"
+                        title="help" href="http://www.sciencedaily.com/releases/2004/12/041217104054.htm">
+                        Click here</a>
+                </div>
+                <!-- EOF Buyer Guide -->
+            </div>
+            </div>
+            <!-- EOF RIGHT -->
+            <div class="right_big_con margin_t">
+                <h4 class="line_20px">
+                    Titanium Magnetic Bracelet Jewelry Information
+                </h4>
+                Titanium is a highly corrosion resistant lightweight metal that is approximately
+                45% lighter but tougher than stainless steel. It is one of the major materials used
+                in modern military and commercial aircraft, spacecrafts as well as numerous other
+                industrial, chemical and medical applications. In recent years, titanium also finds
+                its way into daily fashion jewelry owing to its outstanding properties of lightweight,
+                toughness, workability, corrosion resistance, chemical inactiveness, and biological
+                compatibility with the human body. Our titanium magnetic bracelets not only take
+                full advantage of all the above attributes, but are equipped with an added attribute
+                - magnetic magic, by implanting a magnet in every link of the titanium bracelets,
+                making them not only a fashion jewelry item but also a most convenient health improvement
+                or therapeutic device. This invention has turned magnetic titanium bracelets into
+                one of the most popular daily jewelry items of today. They also make the most caring,
+                thoughtful, useful, meaningful and yet affordable gift items for all occasions,
+                whether they be birthday, Mother's Day, Father's Day, Valentine's Day, Christmas,
+                New Year's Day, family parties, community parties, corporate parties or just a special
+                sweetener for that special someone.
             </div>
         </div>
         <!-- bodyblock end -->
+    <script type="text/javascript">
 
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34359806-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
     </div>
-    <!-- end of mian content -->
+
 
     <!-- begin of footer -->
     <div class="footer">
@@ -3748,21 +2953,9 @@ return true;
     </div>
     <!-- end of footer -->
     <!-- page script -->
-    <script type="text/javascript" src="assets/js/jquery.etalage.min.js"></script>
     <script type="text/javascript" src="assets/js/linked_menu.js"></script>
     <script type="text/javascript">
         $(function(){
-            $('#image-zooming').etalage({
-                thumb_image_width: 280,
-                thumb_image_height: 280,
-                source_image_width: 500,
-                source_image_height: 500,
-                show_hint: true,
-                small_thumbs: 4,
-                autoplay: false,
-                zoom_easing: false,
-                zoom_area_distance: 5
-            });
             var litb = litb||{};
             litb['category_menu'] = linked_menu_data;
             $('.litb-cate-menu').litbMenuShow({ 'data': litb["category_menu"] });
