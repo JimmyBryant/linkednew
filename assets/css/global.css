@@ -1021,7 +1021,7 @@ A.more_product:visited {
 	BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 2px; MARGIN: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; DISPLAY: block; FLOAT: left; BORDER-TOP: #ddd 1px solid; CURSOR: pointer; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 2px
 }
 #relate_cate {
-	WIDTH: 487px;
+	WIDTH: 520px;
 }
 #relate_cate LI {
 	TEXT-INDENT: 2em; WIDTH: 50%; FLOAT: left
@@ -1211,7 +1211,18 @@ A.more_product:visited {
 	PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px
 }
 #product_main_con {
-	WIDTH: 747px; OVERFLOW: hidden
+	width: 783px;
+	overflow: hidden;
+}
+#product_main_con .product-block{
+	border: 1px solid #DDD;
+	margin-bottom: 20px;
+}
+#bodyblock .block-title{
+	padding: 10px;
+	background: #f1f1f1;
+	border-bottom: 1px solid #ddd;
+	margin:0;
 }
 #product_main_con #search_feedback {
 	width: 230px;
@@ -2029,8 +2040,8 @@ A.button_f {
 }
 #product-zooming-box{
 	float: left;
-	width: 360px;
-	padding: 10px;
+	width: 350px;
+	padding: 10px 15px;
 }
  .clearfix:before,
  .clearfix:after {
