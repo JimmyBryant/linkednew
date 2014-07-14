@@ -17,6 +17,7 @@ xmlns:fb="http://www.facebook.com/2008/fbml" dir="ltr" lang="en">
     </link>
     <link rel="stylesheet" type="text/css" href="assets/css/skin.css">
     </link>
+    <link rel="stylesheet" type="text/css" href="assets/css/vImageBox.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.font.css">
     <link rel="stylesheet" type="text/css" href="assets/css/etalage.css">
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
@@ -25,7 +26,7 @@ xmlns:fb="http://www.facebook.com/2008/fbml" dir="ltr" lang="en">
     <script type="text/javascript" src="assets/js/prototype.js"></script>
     <script type="text/javascript" src="assets/js/score.js"></script>
     <script type="text/javascript" src="assets/js/frmCheck.js"></script>
-
+    <script type="text/javascript" src="assets/js/vImageBox.js"></script>
     <script type="text/javascript" src="assets/js/linked_menu_data.js">
     </script>
     <script>
@@ -2496,11 +2497,50 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
             <div style="padding-bottom: 2px; padding-left: 0px; padding-right: 0px; padding-top: 2px"
                 class="margin_t allborder">
                 <div class="for_gray_bg">
-                    <!-- product image zooming box -->
-                    <div id="product-zooming-box">
-                        <ul class="clearfix" id="image-zooming">
+                 <!-- BOF Product Flash-->
+                    <div style="width: 330px" id="product_flash" class="fl margin_t g_t_c">
+                        <ul>
                             <li>
-                            <!-- This is the large (zoomed) image source: -->
+                                <div class="relative">
+                                    <a style="margin: 0px auto; width: 280px" id="product_flash_show"
+                                        class="block lbgs" href="/images/v/20140320060333.jpg" target="_blank">
+                                        <img class="lbg block relative" border="0" src="http://www.linkednew.com/images/l/20140320060333.jpg" width="280"></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <span class="p_f_en"><a id="product_flash_show_a" onclick="return popupwin(this.href,'popup_larger_image',500,560,'resizable=0,scrollbars=0,toolbar=0,status=0');"
+                                href="/images/v/20140320060333.jpg">&nbsp; &nbsp;View Larger Image</a><br>
+                                <a style="color: #1e4e8e; font-size: 11px; text-decoration: underline" href="HV-800-Wireless-Bluetooth-Sports-Headset-Stereo-Music-Headset-Universal-Neckband-for-cellphones-blue-126000061.html#b">
+                                    Share your images with others </a></span>
+                        </ul>
+                        <ul id="product_flash_btn2">
+                            <li class="product_list_li">
+                                <div class="product_list_li_l" title="Back" next="l">
+                                </div>
+                                <div class="product_list_li_c">
+                                    <ul class="product_list_li_ul">
+                                        <li><img class="li_img01" title="retail 20142408122446-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20142408122446-126000061.jpg" width="42" height="42" big="/images/l/20142408122446-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20142508122537-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20142508122537-126000061.jpg" width="42" height="42" big="/images/l/20142508122537-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20142508122557-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20142508122557-126000061.jpg" width="42" height="42" big="/images/l/20142508122557-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20143108123137-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20143108123137-126000061.jpg" width="42" height="42" big="/images/l/20143108123137-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20143208123236-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20143208123236-126000061.jpg" width="42" height="42" big="/images/l/20143208123236-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20143208123256-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20143208123256-126000061.jpg" width="42" height="42" big="/images/l/20143208123256-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20143308123316-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20143308123316-126000061.jpg" width="42" height="42" big="/images/l/20143308123316-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20144508124510-126000061.jpg" border="0" src="http://www.linkednew.com/images/s/20144508124510-126000061.jpg" width="42" height="42" big="/images/l/20144508124510-126000061.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li><li><img class="li_img01" title="retail 20140320060333.jpg" border="0" src="http://www.linkednew.com/images/s/20140320060333.jpg" width="42" height="42" big="/images/l/20140320060333.jpg" imgb="/v/" imgs="/s/" imgsize="280" num="0"></li>
+                                    </ul>
+                                </div>
+                                <div class="product_list_li_r" title="next" next="r">
+                                </div>
+                                <li><span class="g_t_c">Displaying <span class="product_list_text"></span></span>
+                            </li>
+                        </ul>
+
+                        <script type="text/javascript">
+        var obj1=new ls("product_flash_show","product_flash_btn2");  
+        obj1.init();
+                        </script>
+
+                    </div>
+                    <!-- EOF Product Flash-->
+
+                    <!-- product image zooming box -->
+                    <!-- <div id="product-zooming-box">
+                        <ul class="clearfix" id="image-zooming">
+                            <li>                        
                             <img class="etalage_source_image" src="http://www.linkednew.com/images/v/20140320060333.jpg" title="" />
                             <img class="etalage_thumb_image" src="http://www.linkednew.com/images/l/20140320060333.jpg" />
                             </li>
@@ -2534,7 +2574,8 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
                                     Share your images with others
                             </a>
                         </div>
-                    </div>
+                    </div> 
+                    -->
                     <!-- BOF Product Tools-->
                     <div id="product_info_con" class="fr black">
                         <form enctype="multipart/form-data" onsubmit="return check_product(this);" method="post"
@@ -2552,7 +2593,7 @@ var shipping_info ='<h2 class=\"blue\">Shipping Methods:</h2><div class=\"margin
 <a class="addthis_button_compact"></a>
 <a class="addthis_counter addthis_bubble_style"></a>
 </div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5136dd837ac28da1"></script>
+<script type="text/javascript" src="http://www.linkednew.com//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5136dd837ac28da1"></script>
 <!-- AddThis Button END -->
                             <ul class="pad_10px">
                                 <li>Item #126000061 <span class="gray">( date added:4/20/2014 , 61  customers visited ) </span></li>

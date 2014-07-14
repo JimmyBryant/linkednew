@@ -23,8 +23,7 @@ A.lbgs:hover {
 	Z-INDEX: 999997; POSITION: absolute; FILTER: Alpha(opacity=20); WIDTH: 0px; BACKGROUND: #333; HEIGHT: 0px; TOP: 0px; LEFT: 0px; -moz-opacity: 0.20; opacity: 0.20
 }
 .wBp {
-	Z-INDEX: 999998; POSITION: absolute; MARGIN: 0px auto; WIDTH: 520px; HEIGHT: 520px; OVERFLOW: hidden
-}
+	background: #FFF; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,.5);Z-INDEX: 999998; POSITION: absolute; MARGIN: 0px auto; WIDTH: 520px; HEIGHT: 520px; OVERFLOW: hidden }
 .wBp B {
 	DISPLAY: block; FLOAT: left
 }
@@ -52,24 +51,7 @@ A.lbgs:hover {
 .wBp B.o4 {
 	WIDTH: 480px; BACKGROUND: #fff
 }
-.wBp B.o1 {
-	BACKGROUND: url(../images/wb1.png) no-repeat
-}
-.wBp B.o2 {
-	BACKGROUND: url(../images/wb2.png) no-repeat
-}
-.wBp B.o3 {
-	BACKGROUND: url(../images/wb3.png) no-repeat
-}
-.wBp B.o5 {
-	BACKGROUND: url(../images/wb4.png) no-repeat
-}
-.wBp B.o6 {
-	BACKGROUND: url(../images/wb5.png) no-repeat
-}
-.wBp B.o7 {
-	BACKGROUND: url(../images/wb6.png) no-repeat
-}
+
 * HTML .wBp B.o1 {
 	FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src="../images/wb1.png"); BACKGROUND: none transparent scroll repeat 0% 0%
 }
